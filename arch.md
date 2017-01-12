@@ -69,7 +69,7 @@ Timer: Pin 08 HIGH on timeout
 <tr><td> 08 <td> JH   <td> pin, addr  <td> Jump if pin is HIGH
 <tr><td> 09 <td> JL   <td> pin, addr  <td> Jump if pin is LOW
 <tr><td> 0A <td> OUT  <td> ps, reg    <td> Write register bits to port set
-<tr><td> 0B <td> IN   <td> reg,ps     <td> Read port set to register bits
+<tr><td> 0B <td> IN   <td> reg, ps    <td> Read port set to register bits
 <tr><td> 0C <td> NOT  <td> reg        <td> Invert bits in register
 <tr><td> 0D <td> NOP  <td>            <td> No-op
 <tr><td> 0E <td> TIME <td> time, unit <td> Set timer.
