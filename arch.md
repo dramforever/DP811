@@ -78,7 +78,7 @@ Timer: Pin 08 HIGH on timeout
 <tr><td> 11 <td> JE   <td> imm, addr  <td> Jump if last register equals immediate
 <tr><td> 12 <td> CALL <td> addr       <td> Call subroutine
 <tr><td> 13 <td> RET  <td>            <td> Return from subroutine
-<tr><td> 14 <td> SH   <td> reg, dir   <td> Cyclic shift register
+<tr><td> 14 <td> ROT  <td> reg, dir   <td> Rotate (cyclic shift) register
 
 <table>
 <tr><th colspan="2">dir
