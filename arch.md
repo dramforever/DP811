@@ -76,7 +76,7 @@ Timer: Pin 08 HIGH on timeout
 <tr><td> 0D <td> NOP  <td>            <td> No-op
 <tr><td> 0E <td> TIME <td> time, unit <td> Set timer.
 <tr><td> 0F <td> HALT <td>            <td> Stop program
-<tr><td> 10 <td> JMP  <td>            <td> Unconditional jump
+<tr><td> 10 <td> JMP  <td> addr       <td> Unconditional jump
 <tr><td> 11 <td> JE   <td> imm, addr  <td> Jump if last register equals immediate
 <tr><td> 12 <td> CALL <td> addr       <td> Call subroutine
 <tr><td> 13 <td> RET  <td>            <td> Return from subroutine
