@@ -8,9 +8,11 @@ Encoded byte-by-byte. E.g. `Delay 5 seconds` is `DL 05, 01`, and we put in `02 0
 
 8 registers: 00 .. 07
 
-8 pins: P1.0 .. P1.7 = 00 .. 07
+8 pins: P1.0 .. P1.7 = 00 .. 07.
 
-Port sets: P1.{0...7} = 00. Port sets 01 and 02 are on extension board. Accessible using `IN` (`0B`) and `OUT` (`0A`).
+The 8 pins are normally connected to 8 on-board LEDs through removable jumpers. The LEDs are common anode, so they turn *on* when the corresponding pin is *LOW*.
+
+Ports: P1.{0...7} = 00. Ports 01 and 02 are on extension board (**TODO** what are those?). Accessible using `IN` (`0B`) and `OUT` (`0A`).
 
 Timer: Pin 08 HIGH on timeout
 
@@ -20,9 +22,9 @@ Timer: Pin 08 HIGH on timeout
 
 <table>
 <tr><th> #  <th> Name <th> Args       <th> Explaination
-<tr><td> 00 <td> SL   <td> pin        <td> Set HIGH on pin
-<tr><td> 01 <td> SH   <td> pin        <td> Set LOW on pin
-<tr><td> 02 <td> DL   <td> time, unit <td> Wait for some time.
+<tr><td> 00 <td> SL   <td> pin        <td> Set LOW on pin (Turns LED *on*)
+<tr><td> 01 <td> SH   <td> pin        <td> Set HIGH on pin (Turns LED *off*)
+<tr><td> 02 <td> DL   <td> time, unit <td> Wait for some time.
 
 <table>
 <tr><th colspan="2">unit
@@ -65,11 +67,11 @@ Timer: Pin 08 HIGH on timeout
 </table>
 
 <tr><td> 06 <td> ADD  <td> reg, imm   <td> Add immediate to register
-<tr><td> 07 <td> DJNZ <td> reg, addr  <td> Decrease register and jump if not zero
+<tr><td> 07 <td> DJNZ <td> reg, addr  <td> Decrement register and jump if not zero
 <tr><td> 08 <td> JH   <td> pin, addr  <td> Jump if pin is HIGH
 <tr><td> 09 <td> JL   <td> pin, addr  <td> Jump if pin is LOW
-<tr><td> 0A <td> OUT  <td> ps, reg    <td> Write register bits to port set
-<tr><td> 0B <td> IN   <td> reg, ps    <td> Read port set to register bits
+<tr><td> 0A <td> OUT  <td> po, reg    <td> Write register bits to port
+<tr><td> 0B <td> IN   <td> reg, po    <td> Read port to register bits
 <tr><td> 0C <td> NOT  <td> reg        <td> Invert bits in register
 <tr><td> 0D <td> NOP  <td>            <td> No-op
 <tr><td> 0E <td> TIME <td> time, unit <td> Set timer.
